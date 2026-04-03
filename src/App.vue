@@ -158,7 +158,7 @@ const filteredRepos = computed(() => {
 })
 
 async function refreshData() {
-  isLoading.value(true)
+  isLoading.value = true
   try {
     localStorage.removeItem('github_trending_repos')
     localStorage.removeItem('github_trending_timestamp')
@@ -166,7 +166,7 @@ async function refreshData() {
   } catch (error) {
     console.error('Refresh failed:', error)
   } finally {
-    isLoading.value(false)
+    isLoading.value = false
   }
 }
 
@@ -194,7 +194,7 @@ onMounted(async () => {
   } catch (error) {
     console.error('Failed to load repos:', error)
   } finally {
-    isLoading.value(false)
+    isLoading.value = false
   }
 })
 </script>
